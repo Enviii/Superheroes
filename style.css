@@ -1,0 +1,99 @@
+/* Hello */
+
+body {
+    padding-top: 10px;
+    padding-bottom: 20px;
+    background-color: #222;
+    color: #FFF;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    height: 100%;
+}
+h1 { color: #42ACFF }
+h1.main{ color: white; text-align: center; font-size: 60px;}
+
+a {color: white; text-decoration: none;}
+
+div.container {
+	position: relative;
+}
+
+span.marvel {
+	font-size: 65px;
+	color: #E66868;
+}
+
+span.dc {
+	font-size: 65px;
+	color: #3399FF;
+}
+
+.left {
+	max-width: 25%;
+	margin: 0 10px;
+	padding: 10px;
+	float: left;
+}
+
+.middle {
+	float: left;
+	width: 75%;
+	margin: 0 10px;
+	padding: 10px;
+}
+
+.right {
+	float: right;
+	margin: 0 10px;
+	padding: 10px;
+}
+
+div.hero {
+    background-color: #4E4E4E;
+    padding: 10px 35px 20px 35px;
+    margin-bottom: 20px;
+	width: 80%;
+	position: relative;
+}
+div.details {
+	width: 60%;
+	position: relative;
+}
+div.img {
+	top: 0px;
+	right: 0px;
+	position:absolute;
+}
+
+img {
+	max-height: 200px;
+}
+
+@media screen and (max-width: 1080px) {
+	body {
+		font-size: 30px;
+	}
+	.middle {
+		width: 100%;
+		margin: 0;
+		padding: 0;
+		float: none;
+	}
+	.hero {
+		width: 100%;
+		margin: 0;
+		padding: 0;
+		float: none;
+	}
+	.details {
+		width: 100%;
+	}
+	.left {
+		visibility: hidden;
+	}
+	.right {
+		visibility: hidden;
+	}
+	h1.main {
+		font-size: 120px;
+	}
+}

@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+	<title>Superheroes</title>
+</head>
+<body>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<h1 class="main"><a href="http://www.dkarkar.me/superheroes/test.html">Superheroes</a></h1>
+	<div class="container">
+		<div class="left">
+			<div class="marvel">
+				<span class="marvel">M</span><br>
+				<span class="marvel">A</span><br>
+				<span class="marvel">R</span><br>
+				<span class="marvel">V</span><br>
+				<span class="marvel">E</span><br>
+				<span class="marvel">L</span><br>
+			</div>
+		</div>
+		<div class="middle">
+			<ul id="superheroes">
+				<div class="hero" id="form">
+					<form id="form" name="form">
+						<select id="attr">
+							<option value="superhero">Superhero</option>
+							<option value="publisher">Publisher</option>
+							<option value="alter_ego">Alter Ego</option>
+							<option value="first_appearance">First Appearance</option>
+							<option value="characters">Characters</option>
+						</select>
+						<input type="search" name="search" id="search">
+						<input type="submit" value="Search" id="submit">
+					</form>
+				</div>
+			</ul>	
+		</div>
+		<div class="right">
+			<span class="dc">D</span><br>
+			<span class="dc">C</span><br>
+		</div>
+	</div>
+	
+	<script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+	<script>
+		$(document).ready(function() {
+			
+ 			$.getJSON("superheroes.json", function(data) {
+				$.each(data.superheroes, function(k, v) {
+					var list = data.superheroes[k];
+					//console.log(k);
+					//console.log(data.superheroes[k].superhero);
+
+					$("#superheroes").append("<div class='hero' name='superhero' id="+list.superhero+">"
+											 +
+											 "<div class='details'>"
+											 +
+											 "<h1>"+list.superhero+"</h1>"
+											 +
+											 "<br>"
+											 +
+											 "Publisher: "+list.publisher
+											 +
+											 "<br>"
+											 +
+											 "Alter ego: "+list.alter_ego
+											 +
+											 "<br>"
+											 +
+											 "First Appearance: "+list.first_appearance
+											 +
+											 "<br>"
+											 +
+											 "Portrayed by: "+list.characters
+											 +
+											 "<br></div><div class='img'>"
+											 +
+											 "<img src='"+list.artURL+"'>"
+											 +
+											 "</div></div>");
+					
+					//search works! huzzah. kinda buggy. loops through 20 times regardless
+/* 					$.each(data.superheroes, function(a, b) {
+						//console.log(a + ' ' + b);
+						//console.log(a.publisher);
+						//console.log(b.publisher);
+						//console.log(b=="batman");
+						if (b.superhero == "Batman") {
+							console.log(b.alter_ego);
+							return false;
+						}
+						//$("#superheroes").append("<div class='hero'>"+k + ' '+v+"</div>");
+					}); */
+				});
+			});
+			
+			//$(function() {
+			$("#form").submit(function(){
+				var term = $("#search").val();
+				var attribute = $("#attr").val();
+				alert(attribute);
+				$.getJSON("superheroes.json", function(result) {
+					$.each(result.superheroes, function(a, b) {
+						if (b.superhero == term) {
+							
+							//Remove the old div elements if they exist
+							$("#searchTerm").remove();
+							$("div[name='superhero']").remove();
+							
+							$("#superheroes").append("<div class='hero' id='searchTerm'>"+term+"</div>");
+							$("#superheroes").append("<div class='hero' name='superhero' id="+b.superhero+">"
+											 +
+											 "<div class='details'>"
+											 +
+											 "<h1>"+b.superhero+"</h1>"
+											 +
+											 "<br>"
+											 +
+											 "Publisher: "+b.publisher
+											 +
+											 "<br>"
+											 +
+											 "Alter ego: "+b.alter_ego
+											 +
+											 "<br>"
+											 +
+											 "First Appearance: "+b.first_appearance
+											 +
+											 "<br>"
+											 +
+											 "Portrayed by: "+b.characters
+											 +
+											 "<br></div><div class='img'>"
+											 +
+											 "<img src='"+b.artURL+"'>"
+											 +
+											 "</div></div>");
+							return;
+						} else {
+							//console.log("Nothing found");
+							//$("#superheroes").append("<div class='hero' id='searchTerm'>Didn't find anything, sry.</div>");
+						}
+					});
+				});
+				return false;
+			});
+			
+/* 					$.getJSON("superheroes.json", function(data) {
+				$.each(data.superheroes, function() {
+					$.each(this, function(k, v) {
+						console.log(k + ' ' + v);
+					});
+				});
+			});	 */
+		});
+	</script>
+</body>
+</html>
