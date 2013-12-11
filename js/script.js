@@ -4,6 +4,7 @@
 	CSIT 570
 	
 	Created using Jquery and a JSON feed of superheroes
+	Autocomplete was done with Typeahead.js. 
 	
 	Feel free to borrow.
 */
@@ -19,11 +20,37 @@ $(document).ready(function() {
 	 |_|      |______| |______| |_____/ 
 	
 	*/
-	$.getJSON("superheroes.json", function(data) {
+	
+	
+	//var arrayNames = [ "superhero", "publisher", "alter_ego", "first_appearance", "characters" ];
+	
+ // 	$( "#attr" ).click(function() {
+	// 	var select = $( "#attr" ).val();
+	// 	console.log(arrayNames[2]);
+	// });
+
+	$('#search').typeahead({                                
+		name: "heroes3",
+		prefetch: 
+		{
+			url: 'js/superheroes.json',
+			filter: function(parsedResponse){
+				var dataset = [];
+				for(i = 0; i < parsedResponse.superheroes.length; i++) {
+					dataset.push({
+						superhero: parsedResponse.superheroes[i].superhero,
+						value: parsedResponse.superheroes[i].superhero,
+						tokens: [parsedResponse.superheroes[i].superhero]
+					});
+				}
+				return dataset;
+			}
+		}
+	});
+
+	$.getJSON("js/superheroes.json", function(data) {
 		$.each(data.superheroes, function(k, v) {
 			var list = data.superheroes[k];
-			//console.log(k);
-			//console.log(data.superheroes[k].superhero);
 			$("#superheroes").append("<div class='hero' name='superhero' id="+list.superhero+">"+
 									 "<div class='details'>"+
 									 "<h1>"+list.superhero+"</h1>"+
@@ -57,7 +84,7 @@ $(document).ready(function() {
 		var term = $("#search").val();
 		var attribute = $("#attr").val();
 		
-		$.getJSON("superheroes.json", function(result) {
+		$.getJSON("js/superheroes.json", function(result) {
 			
 			//remove previous search term text if it exist before appending new search
 			$("#searchTerm").remove();
@@ -67,6 +94,7 @@ $(document).ready(function() {
 			
 			//use term and attribute vars from form input. Buggy at the moment, doesn't except wildcard searches.
 			$.each(result.superheroes, function(a, b) {
+				
 				if (b[attribute] == term) {
 					
 					//sry for the messiness. Add divs that match the search term
@@ -76,11 +104,11 @@ $(document).ready(function() {
 											 "<br>"+
 											 "<span id='publisher'>Publisher: </span>"+b.publisher+
 											 "<br>"+
-											 "Alter ego: "+b.alter_ego+
+											 "<span id='alterEgo'>Alter ego: </span>"+b.alter_ego+
 											 "<br>"+
-											 "First Appearance: "+b.first_appearance+
+											 "<span id='firstAppearance'>First Appearance: </span>"+b.first_appearance+
 											 "<br>"+
-											 "Portrayed by: "+b.characters+
+											 "<span id='characters'>Portrayed by: </span>"+b.characters+
 											 "<br></div><div class='img'>"+
 											 "<img src='"+b.artURL+"'>"+
 											 "</div></div>");
