@@ -5,7 +5,11 @@ This project is about superheroes from both Marvel and DC displayed stored with 
 
 ### Libraries
 <<<<<<< HEAD
+<<<<<<< HEAD
 This project is pretty straight forward. I use HTML5, CSS3, and JavaScript. I have imported Jquery for the JSON feed as well as for styling. I have also added Typeahead.js to autocomplete the search for the Superhero property. It has not been implemented for the other properties. 
+=======
+This project is pretty straight forward. I use HTML5, CSS3, and JS. I have also implemented Jquery for the JSON feeds and various other functions as well as Typeahead.js for auto completing certain elements in the search bar. 
+>>>>>>> e1a952d64204a5d3f7b52447fc2aa2dc6304ede2
 =======
 This project is pretty straight forward. I use HTML5, CSS3, and JS. I have also implemented Jquery for the JSON feeds and various other functions as well as Typeahead.js for auto completing certain elements in the search bar. 
 >>>>>>> e1a952d64204a5d3f7b52447fc2aa2dc6304ede2
@@ -22,6 +26,7 @@ This project is pretty straight forward. I use HTML5, CSS3, and JS. I have also 
    *  ComicBook
       * ComicBook.ttf
       * Font License.txt
+<<<<<<< HEAD
 
 css/ComicBook contains font used throughout the website. Everything else is self explanatory.
 
@@ -32,6 +37,11 @@ css/ComicBook contains font used throughout the website. Everything else is self
 
 * css
   * style.css
+=======
+
+css/ComicBook contains font used throughout the website. Everything else is self explanatory.
+
+>>>>>>> e1a952d64204a5d3f7b52447fc2aa2dc6304ede2
 
 ### Future
 
