@@ -1,232 +1,257 @@
 /* Hello */
 
 @font-face {
-  font-family: 'ComicBook';
-  src: url('ComicBook/ComicBook.ttf') format('truetype');
+    font-family: 'ComicBook';
+  src: url('ComicBook/ComicBook.ttf');
+}
+
+@font-face {
+    font-family: 'ComicBook';
+	src: url('ComicBook/ComicBookBold.ttf');
+	font-weight: bold;
 }
 
 body {
     padding-bottom: 40px;
     background-color: #222;
     color: #FFF;
-	font-family: "ComicBook", "Lucida Sans Unicode", sans-serif;
+    font-family: "ComicBook", "Lucida Sans Unicode", sans-serif;
     height: 100%;
-/* 	width: 960px; */
-	margin-left: 20px;
+    margin-left: 20px;
 }
-h1 { color: #91D584; margin-bottom: -10px; }
-h1.main { color: white; text-align: center; font-size: 60px; margin-bottom: -25px;}
-h4 { color: white; text-align: center;}
 
-a {color: #61DB4A ; text-decoration: none;}
+h1 {
+    color: #91D584;
+    margin-bottom: -10px;
+}
+
+h1.main {
+    color: white;
+    text-align: center;
+    font-size: 60px;
+    margin-bottom: -25px;
+}
+
+h4 {
+    color: white;
+    text-align: center;
+}
+
+a {
+    color: #61DB4A;
+    text-decoration: none;
+}
 
 div.container {
-	width:960px;
-    margin:0px auto;
-    position:relative;
+    width: 960px;
+    margin: 0px auto;
+    position: relative;
 }
 
 span.marvel {
-	font-size: 65px;
-	color: #E66868;
+    font-size: 65px;
+    color: #E66868;
 }
 
 span.dc {
-	font-size: 65px;
-	color: #3399FF;
+    font-size: 65px;
+    color: #3399FF;
 }
 
-span#search{
-	color: #29FF00;
+span#search {
+    color: #29FF00;
 }
 
 span#publisher {
-	color: rgb(244, 184, 255);
+    color: rgb(244, 184, 255);
 }
 
 span#alterEgo {
-	color: rgb(233, 149, 248);
+    color: rgb(233, 149, 248);
 }
 
 span#firstAppearance {
-	color: rgb(231, 111, 253);
+    color: rgb(231, 111, 253);
 }
 
 span#characters {
-	color: rgb(223, 58, 253);
+    color: rgb(223, 58, 253);
 }
 
 .left {
-	float: left;
-	width: 80px;
+    float: left;
+    width: 80px;
 }
 
 .middle {
-	float: left;
-	width: 800px;
+    float: left;
+    width: 800px;
 }
 
 .right {
-	float: left;
-	width: 80px;
+    float: left;
+    width: 80px;
 }
 
 div.hero {
     background-color: #4E4E4E;
     padding: 10px 35px 20px 35px;
     margin-bottom: 20px;
-	width: 80%;
-	position: relative;
+    width: 80%;
+    position: relative;
 }
+
 form {
-	margin: 10px 0 0 140px;
-	width: 400px;
+    margin: 10px 0 0 140px;
+    width: 400px;
 }
+
 div.details {
-	width: 70%;
-	position: relative;
+    width: 70%;
+    position: relative;
 }
+
 div.img {
-	top: 0px;
-	right: 0px;
-	position:absolute;
+    top: 0px;
+    right: 0px;
+    position: absolute;
 }
 
 img {
-	max-height: 180px;
+    max-height: 180px;
 }
 
 #searchTerm {
-	text-align: center;
+    text-align: center;
 }
-
-/* input#search {
-     -webkit-box-shadow: 
-      inset 0 0 8px  rgba(0,0,0,0.1),
-            0 0 16px rgba(0,0,0,0.1); 
-    -moz-box-shadow: 
-      inset 0 0 8px  rgba(0,0,0,0.1),
-            0 0 16px rgba(0,0,0,0.1); 
-    box-shadow: 
-      inset 0 0 8px  rgba(0,0,0,0.1),
-            0 0 16px rgba(0,0,0,0.1); 
-	
-    background: rgba(255,255,255,0.5);
-}
-
-#attr {
-	
-} */
 
 div.footer {
-	position: absolute;
-	bottom: 0;
+    position: absolute;
+    bottom: 0;
 }
 
 span.tt-dropdown-menu {
-	background-color: #222;
-	color:  #91D584;
-	font-size: 20px;
-	padding: 0 5px 0 10px;
+    background-color: #222;
+    color: #91D584;
+    font-size: 20px;
+    padding: 0 5px 0 10px;
 }
 
 .tt-is-under-cursor {
-	color: white;
+    color: white;
 }
 
 @media screen and (max-width: 499px) {
-	body {
-		width: 480px;
-		margin: -32px;
-		padding: 25px 0 0 0;
-	}
-	div.container {
-		width: 480px;
-	}
-	form {
-		margin: 5px 0 0 55px;
-	}
-	.middle {
-		width: 100%;
-		margin: 0;
-		padding: 0;
-		float: none;
-	}
-	div.hero {
-		width: 100%;
-		margin-bottom: 10px;
-		padding: 5px 5px 5px 5px;
-		float: none;
-	}
-	div.details {
-		width: 290px;
-		padding: 0;
-	}
-	.left {
-		visibility: hidden;
-		height: 0px;
-	}
-	.right {
-		visibility: hidden;
-		height: 0px;
-	}
-	h1 {
-		font-size: 15px;
-		padding: 0;
-	}
-	h1.main {
-		font-size: 25px;
-	}
-	img {
-		max-height: 125px;
-	}
+    body {
+        width: 480px;
+        margin: -32px;
+        padding: 25px 0 0 0;
+    }
+
+    div.container {
+        width: 480px;
+    }
+
+    form {
+        margin: 5px 0 0 55px;
+    }
+
+    .middle {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        float: none;
+    }
+
+    div.hero {
+        width: 100%;
+        margin-bottom: 10px;
+        padding: 5px 5px 5px 5px;
+        float: none;
+    }
+
+    div.details {
+        width: 290px;
+        padding: 0;
+    }
+
+    .left {
+        visibility: hidden;
+        height: 0px;
+    }
+
+    .right {
+        visibility: hidden;
+        height: 0px;
+    }
+
+    h1 {
+        font-size: 15px;
+        padding: 0;
+    }
+
+    h1.main {
+        font-size: 25px;
+    }
+
+    img {
+        max-height: 125px;
+    }
 }
 
-@media screen and (max-width: 959px){
-	.left {
-		visibility: hidden;
-		height: 0px;
-	}
-	.right {
-		visibility: hidden;
-		height: 0px;
-	}
+@media screen and (max-width: 959px) {
+    .left {
+        visibility: hidden;
+        height: 0px;
+    }
+
+    .right {
+        visibility: hidden;
+        height: 0px;
+    }
 }
 
 @media screen and (min-width: 500px) and (max-width: 720px) {
-	body {
-		width: 640px;
-		padding: 25px 0 0 0;
-		margin-left: -33px;
-	}
-	div.container {
-		width: 640px;
-	}
-	.middle {
-		width: 100%;
-		margin: 0;
-		padding: 0;
-		float: none;
-	}
-	div.hero {
-		width: 100%;
-		margin-bottom: 10px;
-		padding: 5px 5px 5px 5px;
-		float: none;
-	}
-	div.details {
-		width: 350px;
-		padding: 0;
-	}
-	.left {
-		visibility: hidden;
-		height: 0px;
-	}
-	.right {
-		visibility: hidden;
-		height: 0px;
-	}
-	img {
-		max-height: 180px;
-	}
+    body {
+        width: 640px;
+        padding: 25px 0 0 0;
+        margin-left: -33px;
+    }
+
+    div.container {
+        width: 640px;
+    }
+
+    .middle {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        float: none;
+    }
+
+    div.hero {
+        width: 100%;
+        margin-bottom: 10px;
+        padding: 5px 5px 5px 5px;
+        float: none;
+    }
+
+    div.details {
+        width: 350px;
+        padding: 0;
+    }
+
+    .left {
+        visibility: hidden;
+        height: 0px;
+    }
+
+    .right {
+        visibility: hidden;
+        height: 0px;
+    }
+
+    img {
+        max-height: 180px;
+    }
 }
