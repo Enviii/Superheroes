@@ -62,7 +62,18 @@ $(document).ready(function () {
         //loop for the main feed. 
         $.each(data.superheroes, function (k, v) {
             var list = data.superheroes[k];
-			var template = "<div class='hero' name='superhero' id=" + v.superhero + ">" + "<div class='details'>" + "<h1>" + v.superhero + "</h1>" + "<br>" + "<span id='publisher'>Publisher: </span>" + v.publisher + "<br>" + "<span id='alterEgo'>Alter ego: </span>" + v.alter_ego + "<br>" + "<span id='firstAppearance'>First Appearance: </span>" + v.first_appearance + "<br>" + "<span id='characters'>Portrayed by: </span>" + v.characters + "<br>" + "</div>" + "<div class='img'>" + "<img src='" + v.artURL + "'>" + "</div>" + "</div>" ;
+			var template = "<div class='hero' name='superhero' id=" + v.superhero + ">" + 
+								"<div class='details'>" + 
+									"<h1>" + v.superhero + "</h1>" + "<br>" + 
+									"<span id='publisher'>Publisher: </span>" + v.publisher + "<br>" + 
+									"<span id='alterEgo'>Alter ego: </span>" + v.alter_ego + "<br>" + 
+									"<span id='firstAppearance'>First Appearance: </span>" + v.first_appearance + "<br>" + 
+									"<span id='characters'>Portrayed by: </span>" + v.characters + "<br>" + 
+								"</div>" + 
+								"<div class='img'>" + 
+									"<img src='" + v.artURL + "'>" + 
+								"</div>" + 
+							"</div>" ;
             $("#superheroes").append(template);
         });
 		
@@ -80,7 +91,7 @@ $(document).ready(function () {
             $.each(data.superheroes, function (k, v) {
 				//if option all is selected search for anything
 				if (attribute == "all"){
-					$.each(["superhero","publisher","alter_ego","first_appearance","characters"], function(index,value){
+					$.each(["superhero","publisher","alter_ego","first_appearance"], function(index,value){
 						if (v[value] == term){
 							var searchTemplate = "<div class='hero' name='superhero' id=" + v.superhero + ">" + "<div class='details'>" + "<h1>" + v.superhero + "</h1>" + "<br>" + "<span id='publisher'>Publisher: </span>" + v.publisher + "<br>" + "<span id='alterEgo'>Alter ego: </span>" + v.alter_ego + "<br>" + "<span id='firstAppearance'>First Appearance: </span>" + v.first_appearance + "<br>" + "<span id='characters'>Portrayed by: </span>" + v.characters + "<br>" + "</div>" + "<div class='img'>" + "<img src='" + v.artURL + "'>" + "</div>" + "</div>";
 							$("#superheroes").append(searchTemplate);
